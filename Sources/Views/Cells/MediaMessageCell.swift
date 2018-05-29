@@ -55,6 +55,11 @@ open class MediaMessageCell: MessageContentCell {
     }
 
     open override func configure(with message: MessageType, at indexPath: IndexPath, and messagesCollectionView: MessagesCollectionView) {
+        
+        guard let displayDelegate = messagesCollectionView.messagesDisplayDelegate else {
+            fatalError(MessageKitError.nilMessagesDisplayDelegate)
+        }
+        
         super.configure(with: message, at: indexPath, and: messagesCollectionView)
         switch message.data {
         case .photo(let image):
