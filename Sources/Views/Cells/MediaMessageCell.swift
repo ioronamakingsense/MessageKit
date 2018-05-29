@@ -66,5 +66,7 @@ open class MediaMessageCell: MessageContentCell {
         default:
             break
         }
+        
+        displayDelegate.configureMediaMessageImageView(imageView, for: message, at: indexPath, in: messagesCollectionView)
     }
 }
