@@ -74,6 +74,7 @@ public extension MessagesDataSource {
     func messageHeaderView(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageReusableView {
         let header = messagesCollectionView.dequeueReusableHeaderView(MessageDateHeaderView.self, for: indexPath)
         header.dateLabel.text = MessageKitDateFormatter.shared.string(from: message.sentDate)
+        header.dateLabel.textColor = UIColor.init(red: 159/255.0, green: 167/255.0, blue: 188/255.0, alpha: 1)
         return header
     }
 

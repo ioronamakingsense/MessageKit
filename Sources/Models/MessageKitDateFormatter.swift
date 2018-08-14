@@ -53,11 +53,11 @@ open class MessageKitDateFormatter {
         case Calendar.current.isDateInToday(date) || Calendar.current.isDateInYesterday(date):
             formatter.doesRelativeDateFormatting = true
             formatter.dateStyle = .short
-            formatter.timeStyle = .short
+            formatter.timeStyle = .none
         case Calendar.current.isDate(date, equalTo: Date(), toGranularity: .weekOfYear):
             formatter.dateFormat = "EEEE h:mm a"
         case Calendar.current.isDate(date, equalTo: Date(), toGranularity: .year):
-            formatter.dateFormat = "E, d MMM, h:mm a"
+            formatter.dateFormat = "E, d MMM"//"E, d MMM, h:mm a"
         default:
             formatter.dateFormat = "MMM d, yyyy, h:mm a"
         }

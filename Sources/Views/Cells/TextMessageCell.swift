@@ -39,7 +39,6 @@ open class TextMessageCell: MessageContentCell {
         }
     }
 
-    //open var messageLabel = MessageLabel()
     open var messageLabel = ContextLabel()
 
     // MARK: - Methods
@@ -75,7 +74,6 @@ open class TextMessageCell: MessageContentCell {
 
         let textColor = displayDelegate.textColor(for: message, at: indexPath, in: messagesCollectionView)
         messageLabel.numberOfLines = 0
-        //messageLabel.textInsets = UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 0)
         
         // Custoim Underline Style (optional)
         messageLabel.underlineStyle = { (linkResult) in
@@ -103,25 +101,6 @@ open class TextMessageCell: MessageContentCell {
         }
         // Needs to be set after the attributedText because it takes precedence
         messageLabel.textColor = textColor
-        
-        
-//        messageLabel.configure {
-//            messageLabel.enabledDetectors = enabledDetectors
-//            for detector in enabledDetectors {
-//                let attributes = displayDelegate.detectorAttributes(for: detector, and: message, at: indexPath)
-//                messageLabel.setAttributes(attributes, detector: detector)
-//            }
-//            switch message.data {
-//            case .text(let text), .emoji(let text):
-//                messageLabel.text = text
-//            case .attributedText(let text):
-//                messageLabel.attributedText = text
-//            default:
-//                break
-//            }
-//            // Needs to be set after the attributedText because it takes precedence
-//            messageLabel.textColor = textColor
-//        }
     }
     
     /// Handle `ContentView`'s tap gesture, return false when `ContentView` don't needs to handle gesture
