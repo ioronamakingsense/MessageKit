@@ -100,7 +100,7 @@ open class TextMessageCell: MessageContentCell {
                 break
         }
         // Needs to be set after the attributedText because it takes precedence
-        messageLabel.textColor = textColor
+        //messageLabel.textColor = textColor
     }
     
     /// Handle `ContentView`'s tap gesture, return false when `ContentView` don't needs to handle gesture
